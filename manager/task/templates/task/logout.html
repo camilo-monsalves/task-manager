@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Has cerrado tu sesión {{user.username}}</h2>
+    <div class="border-top pt-3" style="min-height: 65vh;">
+        <small class="text-muted">
+            <a href="{% url 'login-usuario' %}">Iniciar Sesión</a>
+        </small>
+    </div>
+{% endblock %}
