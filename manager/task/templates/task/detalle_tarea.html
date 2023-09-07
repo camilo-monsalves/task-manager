@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Detalle Tarea {% endblock %}
+
+{% block content %}
+
+<div class="container my-5 text-center">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert {{ message.tags }} alert-dismissible fade show"
+        role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="table-success">
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Fecha de Vencimiento</th>
+                <th>Estado</th>
+                <th>Categoría</th>
+                <th>Observación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <td>{{ tarea.titulo }}</td>
+            <td>{{ tarea.descripcion}}</td>
+            <td>{{ tarea.fecha_vencimiento|date:"d-m-Y" }}</td>
+            <td>{{ tarea.get_estado_display}}</td>
+            <td>{{ tarea.get_categoria_display}}</td>
+            <td>
+                {% if tarea.observacion %}
+                    {{ tarea.observacion }}
+                {% else %}
+                    <p>sin observaciones</p>
+                {% endif %}
+            </td>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-warning btn-lg">
+        <a href="{% url 'editar-tarea' tarea.id %}"
+            style="text-decoration: none; color: white;">Editar</a>
+    </button>
+    <button type="button" class="btn btn-success btn-lg">
+        <a href="{% url 'cambiar-estado-tarea' tarea.id %}"
+            style="text-decoration: none; color: white;">Completar</a>
+    </button>
+    <button type="button" class="btn btn-danger btn-lg open-delete-modal">
+        <a href="{% url 'eliminar-tarea' tarea.id %}"
+            style="text-decoration: none; color: white;">Eliminar</a>
+    </button>
+    <a href="{% url 'list-tarea' %}" class="btn btn-primary btn-lg">Volver</a>
+</div>
+{% endblock %}

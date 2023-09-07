@@ -1,9 +1,85 @@
-* {
+html, body {
     padding: 0;
     margin: 0;
-    border: 0;
+    height: 100%;
 }
 
-body {
-    min-height: 100vh;
+.custom-btn-height {
+    height: calc(90% - 2px);
+}
+
+#prioridad {
+    font-weight: bold;
+}
+
+#superfooter {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 10px 0;
+}
+
+#custom-footer {
+    height: 100px;
+    background-color: #f8f9fa;
+}
+
+/* Estilos para el banner */
+.banner {
+    background-color: #007bff;
+    /* Color de fondo del banner (azul) */
+    color: #fff;
+    /* Color de texto del banner (blanco) */
+    padding: 20px;
+    /* Espaciado interno del banner */
+    text-align: center;
+    /* Alineación del texto al centro */
+}
+
+.banner h1 {
+    font-size: 36px;
+    /* Tamaño de fuente del título */
+    margin-bottom: 10px;
+    /* Espaciado inferior del título */
+}
+
+.banner p {
+    font-size: 18px;
+    /* Tamaño de fuente del texto */
+    margin-bottom: 20px;
+    /* Espaciado inferior del texto */
+}
+
+/* Estilos para los botones del banner */
+.banner-buttons {
+    display: flex;
+    /* Mostrar los botones en línea */
+    justify-content: center;
+    /* Centrar horizontalmente los botones */
+}
+
+.banner-button {
+    background-color: #28a745;
+    /* Color de fondo del botón (verde) */
+    color: #fff;
+    /* Color de texto del botón (blanco) */
+    padding: 10px 20px;
+    /* Espaciado interno del botón */
+    border: none;
+    /* Eliminar el borde del botón */
+    margin: 0 10px;
+    /* Espaciado entre los botones */
+    text-decoration: none;
+    /* Eliminar la decoración de enlace */
+    font-size: 20px;
+    /* Tamaño de fuente del botón */
+    border-radius: 5px;
+    /* Borde redondeado del botón */
+}
+
+/* Estilo hover para el botón */
+.banner-button:hover {
+    background-color: #1e7e34;
+    /* Color de fondo del botón al pasar el mouse (verde más oscuro) */
 }

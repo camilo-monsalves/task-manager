@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Borrar Tarea {% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="card">
+            <div class="card-header">
+                Confirmar Eliminación
+            </div>
+            <div class="card-body">
+                <p>¿Estás seguro de que deseas eliminar la tarea <strong>"{{ tarea.titulo }}"</strong>?</p>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'detalle-tarea' tarea.id %}" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

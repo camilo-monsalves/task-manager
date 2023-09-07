@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block titulo %} Registro {% endblock %}
+{% block titulo %} Inicio {% endblock %}
 
 {% block content %}
     {% if messages %}
@@ -11,5 +11,16 @@
         </div>
         {% endfor %}
     {% endif %}
+
+    <div class="banner">
+        <h1>Bienvenido al Creador de Tareas</h1>
+        <p>Aquí puedes gestionar tus tareas de manera eficiente.</p>
+        
+        <!-- Botones de opciones -->
+        <div class="banner-buttons">
+            <a href="{% url 'list-tarea' %}" class="banner-button">Ver Tareas</a>
+            <a href="{% url 'add-tarea' %}" class="banner-button">Crear Tarea</a>
+        </div>
+    </div>
     
 {% endblock %}
